@@ -1,7 +1,5 @@
 from app.main import get_human_age
 
-from app.main import get_human_age
-
 
 def test_zero_ages() -> None:
     assert get_human_age(0, 0) == [0, 0]
@@ -33,4 +31,3 @@ def test_cat_and_dog_have_different_rules() -> None:
 
 def test_large_ages() -> None:
     assert get_human_age(100, 100) == [21, 17]
-
