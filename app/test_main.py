@@ -45,4 +45,5 @@ def test_incorrect_types_string() -> None:
 
 
 def test_incorrect_types_float() -> None:
-    with pytest.ra
+    with pytest.raises(TypeError):
+        get_human_age(10.5, 10)  # type: ignore
