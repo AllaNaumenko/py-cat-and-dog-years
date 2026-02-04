@@ -1,3 +1,4 @@
+import pytest
 from app.main import get_human_age
 
 
@@ -21,7 +22,7 @@ def test_exactly_second_human_year() -> None:
     assert get_human_age(24, 24) == [2, 2]
 
 
-def test_after_second_human_year_cat_and_dog() -> None:
+def test_after_second_human_year() -> None:
     assert get_human_age(27, 27) == [2, 2]
 
 
@@ -31,3 +32,17 @@ def test_cat_and_dog_have_different_rules() -> None:
 
 def test_large_ages() -> None:
     assert get_human_age(100, 100) == [21, 17]
+
+
+def test_negative_input_values() -> None:
+    with pytest.raises(ValueError):
+        get_human_age(-1, -1)
+
+
+def test_incorrect_types_string() -> None:
+    with pytest.raises(TypeError):
+        get_human_age("10", 10)  # type: ignore
+
+
+def test_incorrect_types_float() -> None:
+    with pytest.ra
